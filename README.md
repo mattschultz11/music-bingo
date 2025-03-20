@@ -2,6 +2,24 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Deployment
+
+This project is deployed to GitHub Pages. To deploy:
+
+1. Ensure you have the necessary permissions on the GitHub repository
+2. Run the deployment command:
+   ```bash
+   npm run deploy
+   ```
+3. The site will be available at https://mattmccullough.github.io/music-bingo
+
+### Deployment Notes
+
+- The app uses HashRouter for client-side routing, which is compatible with GitHub Pages
+- Assets are served from the `/music-bingo/` base path
+- The deployment process builds the app and pushes it to the `gh-pages` branch
+- GitHub Pages caches aggressively, but the build process includes cache-busting hashes
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
