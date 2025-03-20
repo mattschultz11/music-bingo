@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://mattschultz11.github.io/music-bingo",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

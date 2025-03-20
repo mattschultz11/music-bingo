@@ -4,8 +4,6 @@ import { PropsWithChildren } from "react";
 
 import { AuthProvider } from "../context/AuthContext";
 
-import "@radix-ui/themes/styles.css";
-
 function Providers(props: PropsWithChildren) {
   const { children } = props;
   const [theme] = useLocalStorage<"light" | "dark">("theme", "light");
