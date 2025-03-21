@@ -11,7 +11,7 @@ This project is deployed to GitHub Pages. To deploy:
    ```bash
    npm run deploy
    ```
-3. The site will be available at https://mattmccullough.github.io/music-bingo
+3. The site will be available at https://mattschultz11.github.io/music-bingo
 
 ### Deployment Notes
 

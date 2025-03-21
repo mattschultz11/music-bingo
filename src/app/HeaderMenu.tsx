@@ -1,15 +1,14 @@
 import { DropdownMenu, Flex, IconButton } from "@radix-ui/themes";
 import { IconMenu2, IconMoonStars, IconSunFilled } from "@tabler/icons-react";
 import { useLocalStorage } from "@uidotdev/usehooks";
-import { Option } from "effect";
 import { useContext } from "react";
 import { NavLink } from "react-router";
 
-import { AuthContext } from "../context/AuthContext";
+import { SessionContext } from "../context/SessionContext";
 
 function HeaderMenu() {
   const [theme, setTheme] = useLocalStorage("theme", "light");
-  const { isAuthenticated, logout } = useContext(AuthContext);
+  const { isAuthenticated, logout } = useContext(SessionContext);
 
   return (
     <DropdownMenu.Root>
@@ -19,7 +18,7 @@ function HeaderMenu() {
         </IconButton>
       </DropdownMenu.Trigger>
       <DropdownMenu.Content>
-        {Option.getOrElse(isAuthenticated, () => false) && (
+        {isAuthenticated && (
           <>
             <DropdownMenu.Item asChild>
               <NavLink to="/playlist">Playlist</NavLink>

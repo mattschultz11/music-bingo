@@ -2,12 +2,14 @@ import { Button, Flex, Heading } from "@radix-ui/themes";
 import { PropsWithChildren } from "react";
 import { Link, NavLink, NavLinkProps } from "react-router";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 function HomeLink() {
   return (
     <Flex asChild align="center" display="inline-flex">
       <Link to="/">
         <img
-          src="/music-bingo/music-bingo-logo.png"
+          src={`${baseUrl}music-bingo-logo.png`}
           alt="Music Bingo Generator Logo"
           className="h-12 p-2"
         />

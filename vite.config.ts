@@ -5,7 +5,7 @@ import { configDefaults } from "vitest/config";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/music-bingo",
+  base: "/music-bingo/",
   plugins: [react(), tailwindcss()],
   build: {
     outDir: "dist",

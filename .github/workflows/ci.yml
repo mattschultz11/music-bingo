@@ -41,6 +41,10 @@ jobs:
       - name: Run unit tests
         run: pnpm run test:ci
 
+      - name: Create .env file
+        run: |
+          echo "VITE_SPOTIFY_CLIENT_ID=${{ secrets.VITE_SPOTIFY_CLIENT_ID }}" > .env
+
       - name: Build
         if: github.ref != 'refs/heads/main'
         run: pnpm run build

@@ -1,8 +1,7 @@
 import { Button, Flex, Grid, Separator } from "@radix-ui/themes";
-import { Option } from "effect";
 import { useContext } from "react";
 
-import { AuthContext } from "../context/AuthContext";
+import { SessionContext } from "../context/SessionContext";
 import { useScreenSizes } from "../hooks/use-screen-sizes";
 import { HeaderMenu } from "./HeaderMenu";
 import { HomeLink, NavLinks } from "./NavLinks";
@@ -24,7 +23,7 @@ function Header() {
 }
 
 function HeaderSM() {
-  const { isAuthenticated, logout } = useContext(AuthContext);
+  const { isAuthenticated, logout } = useContext(SessionContext);
 
   return (
     <Grid asChild columns="1fr auto 1fr" align="center" px="4">
@@ -32,11 +31,9 @@ function HeaderSM() {
         <Flex justify="start">
           <HomeLink />
         </Flex>
-        <div>
-          {Option.getOrElse(isAuthenticated, () => false) && <NavLinks />}
-        </div>
+        <div>{isAuthenticated && <NavLinks />}</div>
         <Flex align="center" justify="end" gap="4">
-          {Option.getOrElse(isAuthenticated, () => false) && (
+          {isAuthenticated && (
             <Button variant="outline" color="gray" onClick={() => logout()}>
               Logout
             </Button>

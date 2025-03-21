@@ -2,7 +2,8 @@ import { Theme } from "@radix-ui/themes";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { PropsWithChildren } from "react";
 
-import { AuthProvider } from "../context/AuthContext";
+import { AuthProviderProvider } from "../context/AuthProviderContext";
+import { SessionProvider } from "../context/SessionContext";
 
 function Providers(props: PropsWithChildren) {
   const { children } = props;
@@ -10,7 +11,9 @@ function Providers(props: PropsWithChildren) {
 
   return (
     <Theme appearance={theme}>
-      <AuthProvider>{children}</AuthProvider>
+      <AuthProviderProvider>
+        <SessionProvider>{children}</SessionProvider>
+      </AuthProviderProvider>
     </Theme>
   );
 }
